@@ -25,7 +25,7 @@ limit = 0
 extractedData = []
 
 mylines = []                             # Declare an empty list named mylines.
-with open ('Thunderbird.log', 'rt') as myfile: # Open lorem.txt for reading text data
+with open ('ThunderbirdLog.log', 'rt') as myfile: # Open lorem.txt for reading text data
         mylines.append(myline)           # add its contents to mylines.
        
     
