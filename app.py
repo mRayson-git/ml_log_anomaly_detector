@@ -26,7 +26,9 @@ extractedData = []
 
 mylines = []                             # Declare an empty list named mylines.
 with open ('ThunderbirdLog.txt', 'rt') as myfile: # Open lorem.txt for reading text data
-        mylines.append(myline)           # add its contents to mylines.
+        for myline in myfile:                # For each line, stored as myline,
+            mylines.append(myline)           # add its contents to mylines.
+    
         
         for element in mylines:
             isAnomaly = isOutlier(element)
