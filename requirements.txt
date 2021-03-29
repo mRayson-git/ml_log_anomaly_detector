@@ -3,3 +3,5 @@ numpy
 matplotlib
 sklearn
 seaborn
+keras == 2.3.0
+tensorflow == 2.2
