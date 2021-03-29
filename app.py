@@ -27,29 +27,28 @@ extractedData = []
 mylines = []                             # Declare an empty list named mylines.
 with open ('ThunderbirdLog.log', 'rt') as myfile: # Open lorem.txt for reading text data
         mylines.append(myline)           # add its contents to mylines.
-       
-    
-    for element in mylines:
-        isAnomaly = isOutlier(element)
-
-        match = re.search(r'\d{2}:\d{2}:\d{2}',element)     # getting the time of log
-        text = element.split(':')                           # splitting :
         
-        code = element.split('2005')
-       
-        arr = []
-        
-        arr.append(match.group())
-        if(text[-2].strip('') == ' Warning'):
-            arr.append(text[-2] + ': ' + text[-1]) 
-        else:
-            arr.append(text[-1])                                # getting last element after : which is message
+        for element in mylines:
+            isAnomaly = isOutlier(element)
 
-        arr.append(code[0])
+            match = re.search(r'\d{2}:\d{2}:\d{2}',element)     # getting the time of log
+            text = element.split(':')                           # splitting :
 
-        arr.append(isAnomaly)
+            code = element.split('2005')
 
-        extractedData.append(arr)
+            arr = []
+
+            arr.append(match.group())
+            if(text[-2].strip('') == ' Warning'):
+                arr.append(text[-2] + ': ' + text[-1]) 
+            else:
+                arr.append(text[-1])                                # getting last element after : which is message
+
+            arr.append(code[0])
+
+            arr.append(isAnomaly)
+
+            extractedData.append(arr)
         
         
 
