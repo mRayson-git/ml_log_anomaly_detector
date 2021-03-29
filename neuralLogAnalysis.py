@@ -1,5 +1,3 @@
-# helper ref:
-# https://towardsdatascience.com/fraud-and-anomaly-detection-with-artificial-neural-networks-using-python3-and-tensorflow-44b73d8b1240
 
 import pandas as pd 
 import numpy as np 
