@@ -27,37 +27,14 @@ def isOutlier(string):
         return 1
     return 0
 
-limit = 0
+
 extractedData = []
 
 mylines = []                             # Declare an empty list named mylines.
 with open ('Thunderbird.log', 'rt') as myfile: # Open lorem.txt for reading text data
     for myline in myfile:                # For each line, stored as myline,
-        if(limit == 2000000):
-            break
         mylines.append(myline)           # add its contents to mylines.
-        limit += 1
 
-    count = 0    
-    temp = []
-    for myline in mylines:                # For each line, stored as myline,
-            if(myline[0] != '-'):
-                count += 1
-                temp.append(myline)
-                if(count == 6000):
-                    break
-    normCount = 0
-    for myline in mylines:
-        if(myline[0] == '-'):
-            normCount += 1
-            temp.append(myline)
-            if(normCount == 6000):
-                break
-    
-    mylines = temp
-    print(count)
-    print(normCount)
-    print(len(mylines))
     
     for element in mylines:
         isAnomaly = isOutlier(element)
