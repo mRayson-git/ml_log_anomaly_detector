@@ -9,4 +9,4 @@ ADD https://zenodo.org/record/3227177/files/Thunderbird.tar.gz?download=1 Thunde
 
 CMD [ "python", "./extractor.py" ]
 
-CMD [ "python", "./app.py"]
+# CMD [ "python", "./app.py"]
