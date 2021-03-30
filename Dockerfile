@@ -13,7 +13,7 @@ RUN ls -ail
 
 ADD https://zenodo.org/record/3227177/files/Thunderbird.tar.gz?download=1 /code/Thunderbird.tar.gz
 
-RUN chmod 777 ./Thunderbird.tar.gz
+RUN chmod -R 777 ./
 
 CMD [ "python", "./extractor.py" ]
 
