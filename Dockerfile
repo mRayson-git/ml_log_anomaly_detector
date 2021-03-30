@@ -17,4 +17,4 @@ RUN chmod -R 777 ./
 
 CMD [ "python", "./extractor.py" ]
 
-# CMD [ "python", "./app.py"]
+CMD [ "python", "./app.py"]
