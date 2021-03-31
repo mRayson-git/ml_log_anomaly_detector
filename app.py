@@ -8,7 +8,7 @@ try:
     password = "postgres")
 
   # Create a cursor
-  cursor = conn.cursor()
+  cur = conn.cursor()
 
   # execute a statement
   print('PostgreSQL database version:')
