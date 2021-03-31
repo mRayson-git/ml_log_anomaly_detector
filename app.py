@@ -3,5 +3,6 @@ import psycopg2
 conn = psycopg2.connect(
   host = "172.30.136.222",
   database = "testdb",
-  user = "testuser")
+  user = "postgres",
+  password = "postgres")
 print(conn)
