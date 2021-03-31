@@ -16,4 +16,4 @@ RUN chmod -R 777 ./
 RUN pwd
 RUN ls -ail
 
-CMD [ "python", "./app.py"]
+# CMD [ "python", "./app.py"]
