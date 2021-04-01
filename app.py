@@ -39,7 +39,7 @@ try:
   extractedData = []
 
   mylines = []                             
-  with open ('ThunderbirdLog.txt', 'rt') as myfile:
+  with open ('Thunderbird.log', 'rt') as myfile:
     for myline in myfile:
       mylines.append(myline)
     for element in mylines:
