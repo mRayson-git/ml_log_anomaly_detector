@@ -56,6 +56,7 @@ try:
       arr.append(code[0])
       arr.append(isAnomaly)
       extractedData.append(arr)
+      print(arr)
       
   #   Now that extracted data has all the logs, we add them to the table
   print('Adding transactions to the database...')
