@@ -30,8 +30,8 @@ try:
     log_id serial PRIMARY KEY,
     time varchar(30),
     message varchar(300),
-    lognum integer,
-    is_anomalous integer
+    lognum varcahr(30),
+    is_anomalous varchar(30)
     )''')
   
   # Parse File
