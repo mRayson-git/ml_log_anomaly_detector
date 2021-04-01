@@ -29,7 +29,7 @@ try:
   cur.execute('''CREATE TABLE IF NOT EXISTS log_t (
     log_id serial PRIMARY KEY,
     time varchar(30),
-    message varchar(300),
+    message text,
     lognum varcahr(30),
     is_anomalous varchar(30)
     )''')
