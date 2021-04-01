@@ -30,7 +30,7 @@ try:
     log_id serial PRIMARY KEY,
     time varchar(30),
     message varchar(30000),
-    lognum varcahr(30),
+    lognum varchar(30),
     is_anomalous varchar(30)
     )''')
   
