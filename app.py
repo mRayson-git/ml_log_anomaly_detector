@@ -53,10 +53,10 @@ try:
         arr.append(text[-2] + ': ' + text[-1]) 
       else:
         arr.append(text[-1])                                # getting last element after : which is message
+      code[0] = code[0].replace('-','')
       arr.append(code[0])
       arr.append(isAnomaly)
       extractedData.append(arr)
-      print(arr)
       
   #   Now that extracted data has all the logs, we add them to the table
   print('Adding transactions to the database...')
