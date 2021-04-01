@@ -13,7 +13,4 @@ RUN tar -xf Thunderbird.tar.gz
 
 RUN chmod -R 777 ./
 
-RUN pwd
-RUN ls -ail
-
 CMD [ "python", "./app.py"]
