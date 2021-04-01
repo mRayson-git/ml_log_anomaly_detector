@@ -1,4 +1,5 @@
 import psycopg2
+import re
 
 def isOutlier(string):
     if string[0] != '-':
