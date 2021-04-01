@@ -1,5 +1,10 @@
 import psycopg2
 
+def isOutlier(string):
+    if string[0] != '-':
+        return 1
+    return 0
+
 try:
   conn = psycopg2.connect(
     host = "172.30.136.222",
@@ -27,6 +32,34 @@ try:
     lognum integer,
     is_anomalous integer
     )''')
+  
+  # Parse File
+  limit = 0
+  extractedData = []
+
+  mylines = []                             
+  with open ('ThunderbirdLog.txt', 'rt') as myfile:
+    for myline in myfile:
+      mylines.append(myline)
+    for element in mylines:
+      isAnomaly = isOutlier(element)
+      match = re.search(r'\d{2}:\d{2}:\d{2}',element)     # getting the time of log
+      text = element.split(':')                           # splitting :
+      code = element.split('2005')
+      arr = []
+      arr.append(match.group())
+      if(text[-2].strip('') == ' Warning'):
+        arr.append(text[-2] + ': ' + text[-1]) 
+      else:
+        arr.append(text[-1])                                # getting last element after : which is message
+      arr.append(code[0])
+      arr.append(isAnomaly)
+      extractedData.append(arr)
+      
+#   Now that extracted data has all the logs, we add them to the table
+print('Adding transactions to the database...')
+for log in extractedData:
+  cur.execute("INSERT INTO log_t(time, message, lognum, is_anomalous) VALUES (%s, %s, %s, %s)",(extractedData[0], extractedData[1], extractedData[2], extractedData[3]))
   
 
 except (Exception, psycopg2.DatabaseError) as error:
