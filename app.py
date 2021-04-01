@@ -28,11 +28,13 @@ try:
   # Adding test user to table
   print('Adding test data...')
   cur.execute("INSERT INTO accounts(username) VALUES (%s)", ("Bob_9251",))
+  
 
 except (Exception, psycopg2.DatabaseError) as error:
   print(error)
 
 finally:
   if conn is not None:
+    conn.commit()
     conn.close()
     print('Database connection closed.')
