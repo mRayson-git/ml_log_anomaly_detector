@@ -60,7 +60,7 @@ try:
   #   Now that extracted data has all the logs, we add them to the table
   print('Adding transactions to the database...')
   for log in extractedData:
-    cur.execute("INSERT INTO log_t(time, message, lognum, is_anomalous) VALUES (%s, %s, %s, %s)",(extractedData[0], extractedData[1], extractedData[2], extractedData[3]))
+    cur.execute("INSERT INTO log_t(time, message, lognum, is_anomalous) VALUES (%s, %s, %s, %s)",(log[0], log[1], log[2], log[3]))
   
 
 except (Exception, psycopg2.DatabaseError) as error:
