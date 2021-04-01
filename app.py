@@ -27,7 +27,7 @@ try:
   
   # Adding test user to table
   print('Adding test data...')
-  cur.execute("INSERT INTO accounts(username) VALUES ('Bob')")
+  cur.execute("INSERT INTO accounts(username) VALUES (%s)", "Bob_9251")
 
 except (Exception, psycopg2.DatabaseError) as error:
   print(error)
