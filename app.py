@@ -20,14 +20,13 @@ try:
   
   #   Create a test table
   print('Creating Table...')
-  cur.execute('''CREATE TABLE IF NOT EXISTS accounts (
-    user_id serial PRIMARY KEY,
-    username varchar(10) UNIQUE NOT NULL
+  cur.execute('''CREATE TABLE IF NOT EXISTS log_t (
+    log_id serial PRIMARY KEY,
+    time varchar(30),
+    message varchar(300),
+    lognum integer,
+    is_anomalous integer
     )''')
-  
-  # Adding test user to table
-  print('Adding test data...')
-  cur.execute("INSERT INTO accounts(username) VALUES (%s)", ("Bob_9251",))
   
 
 except (Exception, psycopg2.DatabaseError) as error:
